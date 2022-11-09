@@ -30,7 +30,7 @@ function Login() {
       .then((res) => {
         console.log(res);
         alert("Login Successfull");
-        // window.location.href = "/";
+        window.location.href = "/profile";
       })
       .catch((err) => {
         console.log(err);
@@ -176,8 +176,8 @@ function Login() {
                       Login
                     </button>
                     <p className="text-sm font-semibold mt-2 pt-1 mb-0">
-                      Don't have an account?
-                      &nbsp; <Link
+                      Don't have an account? &nbsp;{" "}
+                      <Link
                         to="/register"
                         className="text-red-600 text-[20px] underline hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
                       >

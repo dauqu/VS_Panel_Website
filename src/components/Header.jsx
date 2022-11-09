@@ -1,25 +1,44 @@
 import React from "react";
 import { useState } from "react";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import { useEffect } from "react";
 
 import { FaPlayCircle } from "react-icons/fa";
 import { GoThreeBars } from "react-icons/go";
 import { Link } from "react-router-dom";
-
 import "../assets/css/Header.css";
+import axios from "axios";
 function Header() {
   const scrollToTop = () => {
     window.scrollTo({
-        top: 0,
-        behavior: "smooth",
+      top: 0,
+      behavior: "smooth",
     });
-};
-useEffect(() => {
+  };
+  useEffect(() => {
     scrollToTop();
-}, [])
-  const [navbar, setNavbar] = useState(false);
+  }, []);
 
+  // --------------
+  const [user, setUser] = useState("");
+  console.log(setUser.length);
+  async function GetUsers() {
+    try {
+      const response = await axios.get("http://localhost:4000/api/profile", {
+        withCredentials: true,
+      });
+      setUser(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  React.useEffect(() => {
+    GetUsers();
+  }, []);
+
+  //------------------
+  const [navbar, setNavbar] = useState(false);
   return (
     <>
       <div className="mainheader bg-[#165461]    ">
@@ -115,9 +134,15 @@ useEffect(() => {
                   <li className="text-[white] hover:cursor-pointer hover:font-bold">
                     <a href="javascript:void(0)">Contact US</a>
                   </li>
-                  <li className="text-[white] hover:cursor-pointer hover:font-bold">
-                    <Link to="/login">Login</Link>
-                  </li>
+                  {user.length == 0 ? (
+                    <li className="text-[white] hover:cursor-pointer hover:font-bold">
+                      <Link to="/login">Login</Link>
+                    </li>
+                  ) : (
+                    <li className="text-[white] hover:cursor-pointer hover:font-bold">
+                      <Link to="/profile">Profile</Link>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>
@@ -132,49 +157,50 @@ useEffect(() => {
 
         {/* middle part-----------start form here------------------ */}
         <motion.div
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -10, opacity: 0 }}
-                transition={{ duration: 0.5, stiffness: 500 }}
-                style={{
-                    width: "100%",
-                    height: "100%",
-                }}> 
-                   <div className="text-center items-center  p-8 mb-[180px]">
-          <div className="text-white font-bold text-[40px]  ">
-            Discover With New Dashboard
-          </div>
-          <div className="  text-[#B1CBCF] text-[17px] md:w-1/2 m-auto text-justify">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore,
-            qui delectus ad facilis sunt repudiandae quod quas dolorum
-            accusantium dignissimos id, corrupti possimus impedit consequuntur
-            eveniet sint deleniti! Doloremque, earum.
-          </div>
-          <div className="flex mt-8 justify-center">
-            <div className="">
-              <button className="bg-[#FFFFFF] p-2 text-[#3E6F7A] font-semibold  ">
-                Get Started
-              </button>
+          initial={{ y: -10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -10, opacity: 0 }}
+          transition={{ duration: 0.5, stiffness: 500 }}
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <div className="text-center items-center  p-8 mb-[180px]">
+            <div className="text-white font-bold text-[40px]  ">
+              Discover With New Dashboard
             </div>
-            <div className="w-[20px]"></div>
-            <div className="flex items-center cursor-pointer  ">
-              <div>
-                <FaPlayCircle
-                  style={{
-                    color: "white",
-                    fontSize: "38px",
-                    border: "3px solid #71A1A8",
-                    borderRadius: "50%",
-                  }}
-                />
+            <div className="  text-[#B1CBCF] text-[17px] md:w-1/2 m-auto text-justify">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore,
+              qui delectus ad facilis sunt repudiandae quod quas dolorum
+              accusantium dignissimos id, corrupti possimus impedit consequuntur
+              eveniet sint deleniti! Doloremque, earum.
+            </div>
+            <div className="flex mt-8 justify-center">
+              <div className="">
+                <button className="bg-[#FFFFFF] p-2 text-[#3E6F7A] font-semibold  ">
+                  Get Started
+                </button>
               </div>
-              <div className="text-[#D3E2E4] ml-2 text-[18px] "> Play Demo</div>
+              <div className="w-[20px]"></div>
+              <div className="flex items-center cursor-pointer  ">
+                <div>
+                  <FaPlayCircle
+                    style={{
+                      color: "white",
+                      fontSize: "38px",
+                      border: "3px solid #71A1A8",
+                      borderRadius: "50%",
+                    }}
+                  />
+                </div>
+                <div className="text-[#D3E2E4] ml-2 text-[18px] ">
+                  Play Demo
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-                
-                  </motion.div>
-     
+        </motion.div>
 
         {/* middle part-----------ends here------------------ */}
       </div>

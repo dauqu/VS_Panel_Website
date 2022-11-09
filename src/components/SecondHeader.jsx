@@ -1,8 +1,29 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import { useState } from "react";
-
+import axios from 'axios';
 function SecondHeader() {
+  
+  // --------------
+  const [user, setUser] = useState("");
+  console.log(user.length);
+  async function GetUsers() {
+    try {
+      const response = await axios.get("http://localhost:4000/api/profile", {
+        withCredentials: true,
+      });
+      setUser(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  React.useEffect(() => {
+    GetUsers();
+    
+  }, []);
+
+
     const [navbar, setNavbar] = useState(false);
 
   return (
@@ -70,9 +91,15 @@ function SecondHeader() {
                     <a href="javascript:void(0)">Contact US</a>
                   </li>
                  
-                  <li className="text-[white] hover:cursor-pointer hover:font-bold">
-                    <Link to="/login">Login</Link>
-                  </li>
+                  {user.length == 0 ? (
+                    <li className="text-[white] hover:cursor-pointer hover:font-bold">
+                      <Link to="/login">Login</Link>
+                    </li>
+                  ) : (
+                    <li className="text-[white] hover:cursor-pointer hover:font-bold">
+                      <Link to="/profile">Profile</Link>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>
