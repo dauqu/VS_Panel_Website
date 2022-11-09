@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import "../assets/css/Header.css";
 function Header() {
   const [navbar, setNavbar] = useState(false);
-  
+
   return (
     <>
       <div className="mainheader bg-[#165461]    ">
@@ -47,7 +47,7 @@ function Header() {
             <div>
               <div className="flex items-center justify-between py-3 md:py-5 md:block">
                 <Link to="/">
-                  <h2 className="text-2xl text-[white] font-bold">Saasta</h2>
+                  <h2 className="text-2xl text-[white] font-bold">Saastaa</h2>
                 </Link>
                 <div className="md:hidden">
                   <button
