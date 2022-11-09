@@ -22,8 +22,14 @@ function Register() {
       email: email,
       password: password,
       age: age,
+    }).then((res) => {
+      console.log(res);
+      alert("Signup Successfull");
+      window.location.href = "/login";
+    }).catch((err) => {
+      console.log(err);
+      alert("Signup Failed");
     });
-    console.log(response);
   }
 
   return (

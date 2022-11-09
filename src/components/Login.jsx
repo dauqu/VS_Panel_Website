@@ -13,8 +13,14 @@ function Login() {
     const response = await axios.post("http://localhost:4000/api/login", {
       email: email,
       password: password,
+    }).then((res) => {
+      console.log(res);
+       alert("Login Successfull");
+      window.location.href = "/"; 
+    }).catch((err) => {
+      console.log(err);
+      alert("Login Failed");
     });
-    console.log(response);
   }
 
   return (
