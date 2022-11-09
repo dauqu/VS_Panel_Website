@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import SecondHeader from "./SecondHeader";
 import axios from "axios";
-axios.defaults.withCredentials = true;
 
 function Login() {
   const [email, setEmail] = useState("");
