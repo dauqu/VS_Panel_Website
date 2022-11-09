@@ -167,7 +167,7 @@ function Login() {
                       Forgot password?
                     </a>
                   </div>
-                  <div className="text-center lg:text-left">
+                  <div className="text-center lg:text-left ">
                     <button
                       type="button"
                       className="inline-block px-7 py-3  bg-[#165461]  text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
@@ -177,11 +177,11 @@ function Login() {
                     </button>
                     <p className="text-sm font-semibold mt-2 pt-1 mb-0">
                       Don't have an account?
-                      <Link
+                      &nbsp; <Link
                         to="/register"
-                        className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
+                        className="text-red-600 text-[20px] underline hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
                       >
-                        Register
+                        Register Here!
                       </Link>
                     </p>
                   </div>
