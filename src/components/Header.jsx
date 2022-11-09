@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { motion } from "framer-motion"
+import { useEffect } from "react";
 
 import { FaPlayCircle } from "react-icons/fa";
 import { GoThreeBars } from "react-icons/go";
@@ -7,6 +9,15 @@ import { Link } from "react-router-dom";
 
 import "../assets/css/Header.css";
 function Header() {
+  const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+};
+useEffect(() => {
+    scrollToTop();
+}, [])
   const [navbar, setNavbar] = useState(false);
 
   return (
@@ -97,7 +108,7 @@ function Header() {
                   <li className="text-[white] hover:cursor-pointer hover:font-bold">
                     <a href="javascript:void(0)">Home</a>
                   </li>
-               
+
                   <li className="text-[white] hover:cursor-pointer hover:font-bold">
                     <a href="javascript:void(0)">About US</a>
                   </li>
@@ -105,7 +116,7 @@ function Header() {
                     <a href="javascript:void(0)">Contact US</a>
                   </li>
                   <li className="text-[white] hover:cursor-pointer hover:font-bold">
-                    <Link to="/login">SignUp</Link>
+                    <Link to="/login">Login</Link>
                   </li>
                 </ul>
               </div>
@@ -120,8 +131,16 @@ function Header() {
         {/* top part-----------ends here------------------ */}
 
         {/* middle part-----------start form here------------------ */}
-
-        <div className="text-center items-center  p-8 mb-[180px]">
+        <motion.div
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                transition={{ duration: 0.5, stiffness: 500 }}
+                style={{
+                    width: "100%",
+                    height: "100%",
+                }}> 
+                   <div className="text-center items-center  p-8 mb-[180px]">
           <div className="text-white font-bold text-[40px]  ">
             Discover With New Dashboard
           </div>
@@ -140,7 +159,7 @@ function Header() {
             <div className="w-[20px]"></div>
             <div className="flex items-center cursor-pointer  ">
               <div>
-                <FaPlayCircle 
+                <FaPlayCircle
                   style={{
                     color: "white",
                     fontSize: "38px",
@@ -153,6 +172,9 @@ function Header() {
             </div>
           </div>
         </div>
+                
+                  </motion.div>
+     
 
         {/* middle part-----------ends here------------------ */}
       </div>

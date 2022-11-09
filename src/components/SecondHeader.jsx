@@ -69,8 +69,9 @@ function SecondHeader() {
                   <li className="text-[white] hover:cursor-pointer hover:font-bold">
                     <a href="javascript:void(0)">Contact US</a>
                   </li>
+                 
                   <li className="text-[white] hover:cursor-pointer hover:font-bold">
-                    <Link to="/login">SignUp</Link>
+                    <Link to="/login">Login</Link>
                   </li>
                 </ul>
               </div>
