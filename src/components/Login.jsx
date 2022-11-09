@@ -16,7 +16,7 @@ function Login() {
     }).then((res) => {
       console.log(res);
        alert("Login Successfull");
-      window.location.href = "/"; 
+      // window.location.href = "/"; 
     }).catch((err) => {
       console.log(err);
       alert("Login Failed");
