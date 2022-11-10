@@ -8,7 +8,16 @@ import SecondHeader from "./SecondHeader";
 import { BiPowerOff } from "react-icons/bi";
 import { BsFillPatchCheckFill } from "react-icons/bs";
 import { ImCross } from "react-icons/im";
+import { AiFillHome } from "react-icons/ai";
+import { FiMonitor } from "react-icons/fi";
+import { MdNotifications } from "react-icons/md";
+import { FaKey, FaUserAlt } from "react-icons/fa";
+// import { BsFillPatchCheckFill } from "react-icons/bs";
 function Profile() {
+  // handleLogout
+  const HandleUpdate = () => {
+    window.alert("This feature will be available soon.");
+  };
   // getting data of user profile from profile api
   const [user, setUser] = useState("");
   console.log(setUser.length);
@@ -47,89 +56,213 @@ function Profile() {
       <SecondHeader />
       {/* main content  */}
       {user.length !== 0 ? (
-        <section className="pt-16 bg-blueGray-50">
-          <div className="w-full lg:w-4/12 px-4 mx-auto ">
-            <div className=" flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
-              <div className="px-6">
-                <div className="flex flex-wrap justify-center">
-                  <div className="w-full px-4 flex justify-center">
-                    <div className="w-[100px] m-auto">
-                      <img
-                        alt="userImg"
-                        src="https://demos.creative-tim.com/notus-js/assets/img/team-1-800x800.jpg"
-                        className="shadow-xl rounded-full h-auto align-middle border-none  m-auto max-w-150-px"
-                      />
-                    </div>
+        <section className="pt-32   ">
+          <div className=" bg-[#fbfbfb] shadow-xl w-[900px]    m-auto flex   ">
+            <div className="border w-[200px] ">
+              <div className="p-4  text-left">
+                <div className="w-[150px] m-auto ">
+                  <img
+                    src="https://demos.creative-tim.com/notus-js/assets/img/team-1-800x800.jpg"
+                    className="rounded-full"
+                    alt=""
+                    srcset=""
+                  />
+                </div>
+                <div className="flex justify-center items-center">
+                  <div className="text-[22px] flex   font-semibold mt-2 text-center">
+                    {user.name}
                   </div>
-                  <div className="w-full px-4 text-center items-center  mt-2">
-                    <div className="flex justify-center py-4 lg:pt-4 pt-2">
-                      <div className="mr-4 p-3 text-center items-center">
-                        <BsFillPatchCheckFill style={{fontSize:"23px",color:"#3392E9",textAlign:"center"}} className="m-auto   mt-[6px]   "/>
-                          
-                        <span className="text-sm   font-semibold">
-                         Subscribe
-                        </span>
-                      </div>
-                      <div className="mr-4 p-3 text-center">
-                        <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
-                          10
-                        </span>
-                        <span className="text-sm   font-semibold">
-                          Projects
-                        </span>
-                      </div>
-                      <div className="lg:mr-4 p-3 text-center  ">
-                        <button
-                          className="bg-[#337681] hover:bg-[#165461] "
-                          onClick={() => UserLogut()}
-                        >
-                          <div className="flex items-center text-center p-2  ">
-                            <BiPowerOff
-                              style={{ fontSize: "20px" }}
-                              className="text-white "
-                            />
-                            <div className="text-white m-[2px]">Logout</div>
-                          </div>
-                        </button>
-                      </div>
-                    </div>
+                  <div className="">
+                    <BsFillPatchCheckFill
+                      style={{
+                        fontSize: "23px",
+                        color: "#3392E9",
+                        textAlign: "center",
+                      }}
+                    />
                   </div>
                 </div>
+              </div>
+              <div className="mt-6">
+                <div className="">
+                  <button className="border w-full text-center text-[#342B3D] flex items-center   hover:bg-[#165461] justify-center hover:text-[white]  p-4 ">
+                    <div className="w-[30px]">
+                      <AiFillHome />
+                    </div>
+                    <div className="">Account</div>
+                  </button>
+                </div>
+                <div className="">
+                  <button
+                    className="border w-full text-center text-[#342B3D] flex items-center   hover:bg-[#165461] justify-center hover:text-[white]  p-4 "
+                    onClick={() => HandleUpdate()}
+                  >
+                    <div className="w-[30px]">
+                      <FaUserAlt />
+                    </div>
+                    <div className="">Security</div>
+                  </button>
+                </div>
+                <div className="">
+                  <button
+                    className="border w-full text-center text-[#342B3D] flex items-center   hover:bg-[#165461] justify-center hover:text-[white]  p-4 "
+                    onClick={() => HandleUpdate()}
+                  >
+                    <div className="w-[30px]">
+                      <FaKey />
+                    </div>
+                    <div className="">Password</div>
+                  </button>
+                </div>
+                <div className="">
+                  <button
+                    className="border w-full text-center text-[#342B3D] flex items-center   hover:bg-[#165461] justify-center hover:text-[white]  p-4 "
+                    onClick={() => HandleUpdate()}
+                  >
+                    <div className="w-[30px]">
+                      <FiMonitor />
+                    </div>
+                    <div className="">Application</div>
+                  </button>
+                </div>
+                <div className="">
+                  <button
+                    className="border w-full text-center text-[#342B3D] flex items-center   hover:bg-[#165461] justify-center hover:text-[white]  p-4 "
+                    onClick={() => HandleUpdate()}
+                  >
+                    <div className="w-[30px]">
+                      <MdNotifications />
+                    </div>
+                    <div className="">Notification</div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className="border w-full p-12">
+              <div className="flex items-center justify-between ">
+                <div className="text-[25px] text-[#342B3D] font-bold">
+                  Account Settings
+                </div>
+                <div className="">
+                  <button
+                    className="p-[6px] w-full bg-[#165461] text-[white] rounded font-semibold"
+                    onClick={() => UserLogut()}
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
 
-                <div className="text-center mt-4">
-                  <h3 className="text-xl font-semibold leading-normal   text-blueGray-700 mb-2">
-                    Hi &nbsp; {user.name}
-                  </h3>
-                  <div className="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold  ">
-                    <i className="fas fa-map-marker-alt mr-2   text-blueGray-400"></i>
-                    {user.email}
+              <div className="flex w-full mt-2">
+                <div className="mt-4 w-1/2">
+                  <div className="text-[17px] text-[#342B3D] font-semibold">
+                    Name
                   </div>
-
-                  <div className="mb-2 text-blueGray-600 mt-6">
-                    <i className="fas fa-university mr-2 text-lg text-blueGray-400"></i>
-                    Address - {user.address}
-                  </div>
-                  <div className="mb-2 text-blueGray-600  ">
-                    <i className="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
-                    Username - {user.username}
-                  </div>
-                  <div className="mb-2 text-blueGray-600 ">
-                    <i className="fas fa-university mr-2 text-lg text-blueGray-400"></i>
-                    Phone Number - {user.phone}
+                  <div className="mt-2 ">
+                    <input
+                      className="rounded  "
+                      type="text"
+                      name=""
+                      placeholder={user.name}
+                      id=""
+                      disabled
+                    />
                   </div>
                 </div>
-                <div className="mt-10 py-10 border-t border-blueGray-200 text-center">
-                  <div className="flex flex-wrap justify-center">
-                    <div className="w-full lg:w-9/12 px-4">
-                      <p className="mb-4 text-lg text-justify leading-relaxed text-blueGray-700">
-                        An artist of considerable range, Jenna the name taken by
-                        Melbourne-raised, Brooklyn-based Nick Murphy writes,
-                        performs and records all of his own music, giving it a
-                        warm, intimate feel with a solid groove structure. An
-                        artist of considerable range.
-                      </p>
-                    </div>
+                <div className="mt-4 w-1/2">
+                  <div className="text-[17px]  text-[#342B3D] font-semibold">
+                    Username
                   </div>
+                  <div className="mt-2 ">
+                    <input
+                      className="rounded"
+                      type="text"
+                      name=""
+                      placeholder={user.username}
+                      id=""
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex w-full mt-2">
+                <div className="mt-4 w-1/2">
+                  <div className="text-[17px] text-[#342B3D] font-semibold">
+                    Email
+                  </div>
+                  <div className="mt-2 ">
+                    <input
+                      className="rounded  "
+                      type="text"
+                      name=""
+                      placeholder={user.email}
+                      id=""
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div className="mt-4 w-1/2">
+                  <div className="text-[17px]  text-[#342B3D] font-semibold">
+                    Address
+                  </div>
+                  <div className="mt-2 ">
+                    <input
+                      className="rounded"
+                      type="text"
+                      name=""
+                      placeholder={user.address}
+                      id=""
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex w-full pb-4 mt-2">
+                <div className="mt-4 w-1/2">
+                  <div className="text-[17px] text-[#342B3D] font-semibold">
+                    Phone{" "}
+                  </div>
+                  <div className="mt-2 ">
+                    <input
+                      className="rounded  "
+                      type="text"
+                      name=""
+                      placeholder={user.phone}
+                      id=""
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div className="mt-4 w-1/2">
+                  <div className="text-[17px]  text-[#342B3D] font-semibold">
+                    Age
+                  </div>
+                  <div className="mt-2 ">
+                    <input
+                      className="rounded"
+                      type="text"
+                      name=""
+                      placeholder={user.age}
+                      id=""
+                      disabled
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex mt-8 justify-center w-1/2">
+                <div className="w-[100px]">
+                  <button
+                    className="p-[6px] w-full bg-[#165461] text-[white] rounded font-semibold"
+                    onClick={() => HandleUpdate()}
+                  >
+                    Update
+                  </button>
+                </div>
+                <div className="w-[100px]">
+                  <button className="p-2 font-semibold text-[#342B3D] w-full ">
+                    Cancel
+                  </button>
                 </div>
               </div>
             </div>
