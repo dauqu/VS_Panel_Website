@@ -56,9 +56,9 @@ function Profile() {
       <SecondHeader />
       {/* main content  */}
       {user.length !== 0 ? (
-        <section className="pt-32   ">
-          <div className=" bg-[#fbfbfb] shadow-xl w-[900px]    m-auto flex   ">
-            <div className="border w-[200px] ">
+        <section className="pt-16 sm:pt-32  ">
+          <div className=" bg-[#fbfbfb] shadow-xl lg:w-[900px] w-full p-4 sm:p-0  m-auto sm:flex   ">
+            <div className="border sm:w-[200px] ">
               <div className="p-4  text-left">
                 <div className="w-[150px] m-auto ">
                   <img
@@ -153,14 +153,14 @@ function Profile() {
                 </div>
               </div>
 
-              <div className="flex w-full mt-2">
-                <div className="mt-4 w-1/2">
+              <div className="md:flex w-full  mt-2">
+                <div className="mt-4  w-full md:w-1/2 m-2">
                   <div className="text-[17px] text-[#342B3D] font-semibold">
                     Name
                   </div>
                   <div className="mt-2 ">
                     <input
-                      className="rounded  "
+                      className="rounded w-full "
                       type="text"
                       name=""
                       placeholder={user.name}
@@ -169,13 +169,13 @@ function Profile() {
                     />
                   </div>
                 </div>
-                <div className="mt-4 w-1/2">
+                <div className="mt-4 w-full  md:w-1/2  m-2">
                   <div className="text-[17px]  text-[#342B3D] font-semibold">
                     Username
                   </div>
                   <div className="mt-2 ">
                     <input
-                      className="rounded"
+                      className="rounded w-full"
                       type="text"
                       name=""
                       placeholder={user.username}
@@ -185,14 +185,14 @@ function Profile() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-full mt-2">
-                <div className="mt-4 w-1/2">
+              <div className="md:flex w-full  mt-2">
+                <div className="mt-4  w-full md:w-1/2 m-2">
                   <div className="text-[17px] text-[#342B3D] font-semibold">
                     Email
                   </div>
                   <div className="mt-2 ">
                     <input
-                      className="rounded  "
+                      className="rounded  w-full "
                       type="text"
                       name=""
                       placeholder={user.email}
@@ -201,13 +201,13 @@ function Profile() {
                     />
                   </div>
                 </div>
-                <div className="mt-4 w-1/2">
+                <div className="mt-4  w-full md:w-1/2 m-2">
                   <div className="text-[17px]  text-[#342B3D] font-semibold">
                     Address
                   </div>
                   <div className="mt-2 ">
                     <input
-                      className="rounded"
+                      className="rounded  w-full"
                       type="text"
                       name=""
                       placeholder={user.address}
@@ -217,14 +217,14 @@ function Profile() {
                   </div>
                 </div>
               </div>
-              <div className="flex w-full pb-4 mt-2">
-                <div className="mt-4 w-1/2">
+              <div className="md:flex w-full  mt-2">
+                <div className="mt-4  w-full md:w-1/2 m-2">
                   <div className="text-[17px] text-[#342B3D] font-semibold">
                     Phone{" "}
                   </div>
                   <div className="mt-2 ">
                     <input
-                      className="rounded  "
+                      className="rounded  w-full "
                       type="text"
                       name=""
                       placeholder={user.phone}
@@ -233,13 +233,13 @@ function Profile() {
                     />
                   </div>
                 </div>
-                <div className="mt-4 w-1/2">
+                <div className="mt-4  w-full md:w-1/2 m-2">
                   <div className="text-[17px]  text-[#342B3D] font-semibold">
                     Age
                   </div>
                   <div className="mt-2 ">
                     <input
-                      className="rounded"
+                      className="rounded  w-full"
                       type="text"
                       name=""
                       placeholder={user.age}
