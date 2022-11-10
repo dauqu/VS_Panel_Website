@@ -28,8 +28,30 @@ import "../assets/css/Body.css";
 import Slider from "./Slider";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import StripeCheckout from "react-stripe-checkout";
 
 function Body() {
+  // stripe payment gateway code strat from here------------------------
+  const plan1 = 15,
+    plan2 = 25,
+    plan3 = 35,
+    plan4 = 45;
+  const handleToken = (token) => {
+    fetch("http://localhost:4000/api/stripepayment/donate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token, plan1, plan2, plan3, plan4 }),
+    })
+      .then((res) => res.json())
+      .then((_) => {
+        window.alert("Transaction Successful.");
+      })
+      .catch((_) => window.alert("Transaction Failed."));
+  };
+  // stripe payment gateway code end here------------------------
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -484,7 +506,7 @@ function Body() {
               <div className="text-[#22616C] font-semibold mt-4">Basic</div>
               <div>
                 <span className="text[#222222] font-bold text-[40px] mt-4 ">
-                  $25
+                  ${plan1}
                 </span>
                 /year
               </div>
@@ -507,7 +529,18 @@ function Body() {
                   className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
                   style={{ border: "1px solid #215E6A" }}
                 >
-                  Buy Package
+                  <StripeCheckout
+                    stripeKey={process.env.REACT_APP_STRIPE_KEY || ""}
+                    token={handleToken}
+                    name=""
+                    panelLabel={`Donate`}
+                    currency="USD"
+                    amount={plan1 * 100}
+                    className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
+                    style={{ border: "1px solid #215E6A" }}
+                  >
+                    Buy Package
+                  </StripeCheckout>
                 </button>
               </div>
             </div>
@@ -515,7 +548,7 @@ function Body() {
               <div className="text-[#22616C] font-semibold mt-4">Standard</div>
               <div>
                 <span className="text[#222222] font-bold text-[40px] mt-4 ">
-                  $50
+                  ${plan2}
                 </span>
                 /year
               </div>
@@ -538,7 +571,18 @@ function Body() {
                   className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
                   style={{ border: "1px solid #215E6A" }}
                 >
-                  Buy Package
+                  <StripeCheckout
+                    stripeKey={process.env.REACT_APP_STRIPE_KEY || ""}
+                    token={handleToken}
+                    name=""
+                    panelLabel={`Donate`}
+                    currency="USD"
+                    amount={plan2 * 100}
+                    className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
+                    style={{ border: "1px solid #215E6A" }}
+                  >
+                    Buy Package
+                  </StripeCheckout>
                 </button>
               </div>
             </div>
@@ -546,7 +590,7 @@ function Body() {
               <div className="text-[#22616C] font-semibold mt-4">Pro</div>
               <div>
                 <span className="text[#222222] font-bold text-[40px] mt-4 ">
-                  $75
+                  ${plan3}
                 </span>
                 /year
               </div>
@@ -569,7 +613,18 @@ function Body() {
                   className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
                   style={{ border: "1px solid #215E6A" }}
                 >
-                  Buy Package
+                  <StripeCheckout
+                    stripeKey={process.env.REACT_APP_STRIPE_KEY || ""}
+                    token={handleToken}
+                    name=""
+                    panelLabel={`Donate`}
+                    currency="USD"
+                    amount={plan2 * 100}
+                    className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
+                    style={{ border: "1px solid #215E6A" }}
+                  >
+                    Buy Package
+                  </StripeCheckout>
                 </button>
               </div>
             </div>
@@ -577,7 +632,7 @@ function Body() {
               <div className="text-[#22616C] font-semibold mt-4">Ultra Pro</div>
               <div>
                 <span className="text[#222222] font-bold text-[40px] mt-4 ">
-                  $100
+                  ${plan4}
                 </span>
                 /year
               </div>
@@ -600,7 +655,18 @@ function Body() {
                   className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
                   style={{ border: "1px solid #215E6A" }}
                 >
-                  Buy Package
+                  <StripeCheckout
+                    stripeKey={process.env.REACT_APP_STRIPE_KEY || ""}
+                    token={handleToken}
+                    name=""
+                    panelLabel={`Donate`}
+                    currency="USD"
+                    amount={plan2 * 100}
+                    className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
+                    style={{ border: "1px solid #215E6A" }}
+                  >
+                    Buy Package
+                  </StripeCheckout>
                 </button>
               </div>
             </div>

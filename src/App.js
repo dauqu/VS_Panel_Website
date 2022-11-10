@@ -6,6 +6,8 @@ import Login from "./components/Login";
 import Profile from "./components/Profile";
 import Register from "./components/Register";
 import Slider from "./components/Slider";
+import StripePayment from "./components/StripePayment";
+import Test from "./components/Test";
 // allow axios credentials
 
 axios.defaults.withCredentials = true;
@@ -18,6 +20,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/test" element={<Test />} />
+        <Route path="/stripepayment" element={<StripePayment />} />
       </Routes>
     
     </>

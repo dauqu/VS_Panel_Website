@@ -21,16 +21,16 @@ function Header() {
 
   // --------------
   const [user, setUser] = useState("");
-  console.log(setUser.length);
+  // console.log(setUser.length);
   async function GetUsers() {
     try {
       const response = await axios.get("http://localhost:4000/api/profile", {
         withCredentials: true,
       });
       setUser(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }
   React.useEffect(() => {

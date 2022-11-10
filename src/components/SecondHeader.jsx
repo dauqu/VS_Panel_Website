@@ -6,16 +6,16 @@ function SecondHeader() {
   
   // --------------
   const [user, setUser] = useState("");
-  console.log(user.length);
+  // console.log(user.length);
   async function GetUsers() {
     try {
       const response = await axios.get("http://localhost:4000/api/profile", {
         withCredentials: true,
       });
       setUser(response.data);
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }
   React.useEffect(() => {
