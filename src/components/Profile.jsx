@@ -83,7 +83,7 @@ function Profile() {
                   </div>
                 </div>
               </div>
-              <div className="mt-6">
+              <div className="mt-6 sm:block flex overflow-x-scroll ">
                 <div className="">
                   <button className="border w-full text-center text-[#342B3D] flex items-center   hover:bg-[#165461] justify-center hover:text-[white]  p-4 ">
                     <div className="w-[30px]">
@@ -138,7 +138,7 @@ function Profile() {
                 </div>
               </div>
             </div>
-            <div className="border w-full p-12">
+            <div className="border w-full sm:p-12 p-8">
               <div className="flex items-center justify-between ">
                 <div className="text-[25px] text-[#342B3D] font-bold">
                   Account Settings
@@ -276,7 +276,7 @@ function Profile() {
                 <div className="flex flex-wrap justify-center">
                   <img src={loginplease} alt="" srcset="" />
                   <div className="pb-4">
-                    <h1 className="text-3xl font-bold text-center">
+                    <h1 className="text-3xl text-[#165461] font-bold text-center">
                       Please Login First
                     </h1>
                   </div>
