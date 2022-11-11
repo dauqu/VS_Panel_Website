@@ -26,7 +26,7 @@ function Cart() {
         <SecondHeader />
       </div>
 
-      <div className="bg-[#fbfbfb] p-6 mt-16">
+      <div className="bg-[#fbfbfb] md:p-6 p-4 mt-16">
         <motion.div
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -37,7 +37,7 @@ function Cart() {
             height: "100%",
           }}
         >
-          <div className="p-10 bg-[white]  m-auto   shadow-xl lg:w-[1000px] w-full">
+          <div className="md:p-10 p-4 bg-[white]  m-auto   shadow-xl lg:w-[1000px] w-full">
             <div className="   p-6 m-auto sm:flex items-center justify-between">
               <div className="w-[200px]   text-[22px] font-bold text-[#393C3F]">
                 Cart
@@ -47,13 +47,13 @@ function Cart() {
                   Shop
                 </div>
                 <div className="w-[70px] text-[#626262] cursor-pointer">
-                  Shop
+                  List
                 </div>
                 <div className="w-[70px] text-[#626262] cursor-pointer">
-                  Shop
+                  View
                 </div>
                 <div className="w-[70px] text-[#626262] cursor-pointer">
-                  Shop
+                  Order
                 </div>
                 <div className="w-[70px] text-[#626262] cursor-pointer">
                   <BiSearch />
@@ -63,13 +63,13 @@ function Cart() {
                 </div>
               </div>
             </div>
-            <div className="flex mt-2 p-4">
-              <div className="w-1/2 m-2 p-6">
+            <div className="md:flex mt-2 p-4">
+              <div className="md:w-1/2 w-full md:m-2 m-0 md:p-6 p-2">
                 <div className="text-[22px] p-2 text-[#393C3F] font-semibold">
                   <div className="">Shopping Cart</div>
                 </div>
                 <div className="">
-                  <div className="cardd shadow-md border w-[310px] mt-8 p-6 bg-[#FFFFFF] text-center   ">
+                  <div className="cardd shadow-md border md:w-[310px]  w-full md:mt-8 m-auto p-6 bg-[#FFFFFF] text-center   ">
                     <div className="text-[#22616C] font-semibold mt-4">
                       Basic
                     </div>
@@ -95,39 +95,20 @@ function Cart() {
                     <div className="text-[#383838] font-semibold mt-6">
                       10 Photo Assets
                     </div>
-                    <div className="mt-8">
-                      <button
-                        className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
-                        style={{ border: "1px solid #215E6A" }}
-                      >
-                        {/* <StripeCheckout
-                    stripeKey={process.env.REACT_APP_STRIPE_KEY || ""}
-                    token={handleToken}
-                    name=""
-                    panelLabel={`Donate`}
-                    currency="USD"
-                    amount={plan1 * 100}
-                    className="p-2 font-semibold text-[#26606B] hover:bg-[#165461] hover:text-white "
-                    style={{ border: "1px solid #215E6A" }}
-                  >
-                  </StripeCheckout> */}
-                        Buy Package
-                      </button>
-                    </div>
                   </div>
                 </div>
-                <div className="mt-8 flex items-center  ">
+                <div className="mt-8  flex items-center  ">
                   <Link to="/">
                     <div className="w-[200px]  text-[17px] font-semibold hover:text-[#165461]">
                       Continue Shopping
                     </div>
                   </Link>
                   <div className="text-[17px] font-semibold">
-                    Total - <span className=" text-[20px] font-bold">$15</span>{" "}
+                    Total - <span className=" text-[20px] font-bold">$15</span>
                   </div>
                 </div>
               </div>
-              <div className="w-1/2 m-2   text-[#393C3F] font-semibold p-6 bg-[#FAFAFA] rounded">
+              <div className="md:w-1/2 w-full m-2   text-[#393C3F] font-semibold md:p-6 p-2 bg-[#FAFAFA] rounded-[5px]">
                 <div className="text-[22px]">Payment Info</div>
                 <div className="">
                   <div className="mt-4">
@@ -227,15 +208,15 @@ function Cart() {
                               />
                             </svg>
                           </label>
-                          <label className="relative flex-1 flex flex-col">
-                            <span className="font-bold mb-3">Expire date</span>
+                          <label className="relative w-full flex flex-col">
+                          <span className="font-bold mb-3">Expire date</span>
                             <input
                               className="rounded-md peer pl-12 pr-2 py-2 border-2 border-gray-200 placeholder-gray-300"
                               type="text"
                               name="expire_date"
                               placeholder="MM/YY"
                             />
-                            <svg
+                              <svg
                               xmlns="http://www.w3.org/2000/svg"
                               className="absolute bottom-0 left-0 -mb-0.5 transform translate-x-1/2 -translate-y-1/2 text-black peer-placeholder-shown:text-gray-300 h-6 w-6"
                               fill="none"
@@ -250,13 +231,12 @@ function Cart() {
                               />
                             </svg>
                           </label>
-                          <label className="relative flex-1 flex flex-col">
-                            <span className="font-bold flex items-center gap-3 mb-3">
-                              CVC/CVV
+                          <label className="relative w-full flex flex-col">
+                          <span className="font-bold flex items-center gap-3 mb-3">
+                             CVV
                               <span className="relative group">
                                 <span className="hidden group-hover:flex justify-center items-center px-2 py-1 text-xs absolute -right-2 transform translate-x-full -translate-y-1/2 w-max top-1/2 bg-black text-white">
-                                  {" "}
-                                  Hey ceci est une infobulle !
+                                  Turn your card over and look at the CVV
                                 </span>
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
@@ -295,6 +275,7 @@ function Cart() {
                               />
                             </svg>
                           </label>
+                           
                         </form>
                       </div>
                       <div className="mt-8 text-center">
@@ -306,6 +287,8 @@ function Cart() {
                         </button>
                       </div>
                     </div>
+                    {/* ------------- */}
+                     
                   </div>
                 </div>
               </div>
