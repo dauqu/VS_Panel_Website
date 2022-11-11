@@ -1,6 +1,7 @@
-import  axios  from "axios";
+import axios from "axios";
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import Cart from "./components/Cart";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Newprofile from "./components/Newprofile";
@@ -24,8 +25,8 @@ function App() {
         <Route path="/test" element={<Test />} />
         <Route path="/stripepayment" element={<StripePayment />} />
         <Route path="/newprofile" element={<Newprofile />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
-    
     </>
   );
 }

@@ -36,6 +36,7 @@ function Body() {
     plan2 = 25,
     plan3 = 35,
     plan4 = 45;
+    
   const handleToken = (token) => {
     fetch("http://localhost:4000/api/stripepayment/donate", {
       method: "POST",
