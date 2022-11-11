@@ -25,7 +25,7 @@ function App() {
         <Route path="/test" element={<Test />} />
         <Route path="/stripepayment" element={<StripePayment />} />
         <Route path="/newprofile" element={<Newprofile />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart/:id" element={<Cart />} />
       </Routes>
     </>
   );

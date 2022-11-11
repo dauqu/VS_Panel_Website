@@ -14,10 +14,12 @@ import { BsHandbagFill } from "react-icons/bs";
 import { MdNotifications } from "react-icons/md";
 import { FaKey, FaUserAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 // import { BsFillPatchCheckFill } from "react-icons/bs";
 function Profile() {
+  const { id } = useParams();
+
   // scrool to top function
   const scrollToTop = () => {
     window.scrollTo({
@@ -110,7 +112,7 @@ function Profile() {
                 </div>
                 <div className="mt-6 sm:block flex overflow-x-scroll ">
                   <div className="">
-                    <Link to="/cart">
+                    <Link to={`/cart/${user._id}`}>
                       <button className="border w-full text-center text-[#342B3D] flex items-center   hover:bg-[#165461] justify-center hover:text-[white]  p-4 ">
                         <div className="w-[30px]">
                           <BsHandbagFill />
@@ -181,14 +183,14 @@ function Profile() {
                 <div className="md:flex w-full  mt-2">
                   <div className="mt-4  w-full md:w-1/2 m-2">
                     <div className="text-[17px] text-[#342B3D] font-semibold">
-                      Name
+                      UniqueKey{" "}
                     </div>
                     <div className="mt-2 ">
                       <input
-                        className="rounded w-full "
+                        className="rounded  w-full "
                         type="text"
                         name=""
-                        placeholder={user.name}
+                        placeholder={user.uniqueKey}
                         id=""
                         disabled
                       />

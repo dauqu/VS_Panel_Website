@@ -5,10 +5,11 @@ import { BiCreditCard } from "react-icons/bi";
 import SecondHeader from "./SecondHeader";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FaStripeS } from "react-icons/fa";
 import { BsPaypal } from "react-icons/bs";
 import { SiRazorpay } from "react-icons/si";
+import axios from "axios";
 
 function Cart() {
   // scroll to top function
@@ -21,8 +22,29 @@ function Cart() {
   useEffect(() => {
     scrollToTop();
   }, []);
+  const { id } = useParams();
+  //  handle Checkoutsubmit unique key
+  const handleCheckout = () => {
+    const uniqueKey = Math.random().toString(36).slice(2, 99).toUpperCase();
 
- 
+    console.log(uniqueKey); // unique key
+
+    // posting unique key to database by axios
+    axios
+      .patch(
+        `http://localhost:4000/api/GetUser/update/${id}`,
+        {
+          uniqueKey: uniqueKey,
+        }
+      )
+      .then((res) => {
+        console.log(res.data);
+        alert("New UniqueKey of user "+ uniqueKey);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="">
@@ -68,12 +90,12 @@ function Cart() {
               </div>
             </div>
             <div className="md:flex mt-2 p-4">
-              <div className="md:w-1/2 w-full md:m-2 m-0 md:p-6 p-2">
+              <div className="md:w-1/2 w-[270px] md:m-2 m-0 md:p-6 p-2">
                 <div className="text-[22px] p-2 text-[#393C3F] font-semibold">
                   <div className="">Shopping Cart</div>
                 </div>
                 <div className="">
-                  <div className="cardd shadow-md border md:w-[310px]  w-full md:mt-8 m-auto p-6 bg-[#FFFFFF] text-center   ">
+                  <div className="cardd shadow-md border md:w-[270px]  w-full md:mt-8   md:p-6 p-4 bg-[#FFFFFF] text-left   ">
                     <div className="text-[#22616C] font-semibold mt-4">
                       Basic
                     </div>
@@ -285,6 +307,7 @@ function Cart() {
                         <button
                           className="bg-[#165461] p-2 font-semibold text-[white] hover:bg-[white] hover:text-[#165461] "
                           style={{ border: "1px solid #215E6A" }}
+                          onClick={() => handleCheckout()}
                         >
                           Checkout
                         </button>
