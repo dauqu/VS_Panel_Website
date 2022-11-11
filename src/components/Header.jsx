@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 
-import { FaPlayCircle,FaShoppingCart } from "react-icons/fa";
+import { FaPlayCircle, FaShoppingCart } from "react-icons/fa";
 import { GoThreeBars } from "react-icons/go";
 import { Link } from "react-router-dom";
 import "../assets/css/Header.css";
@@ -95,7 +95,7 @@ function Header() {
               >
                 <ul className="items-center justify-center space-y-4 md:flex md:space-x-4 md:space-y-0">
                   <li className="text-[white] hover:cursor-pointer hover:font-bold">
-                    <a href="javascript:void(0)">Home</a>
+                    <Link to="/">Home</Link>
                   </li>
 
                   <li className="text-[white] hover:cursor-pointer hover:font-bold">
@@ -116,11 +116,13 @@ function Header() {
                     </>
                   )}
                   {user.length == 0 ? (
-                     <></>
+                    <></>
                   ) : (
                     <>
                       <li className="text-[white] hover:cursor-pointer hover:font-bold">
-                        <Link to="/cart"><FaShoppingCart/></Link>
+                        <Link to="/cart">
+                          <FaShoppingCart />
+                        </Link>
                       </li>
                     </>
                   )}
