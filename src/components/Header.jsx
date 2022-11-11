@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 
-import { FaPlayCircle } from "react-icons/fa";
+import { FaPlayCircle,FaShoppingCart } from "react-icons/fa";
 import { GoThreeBars } from "react-icons/go";
 import { Link } from "react-router-dom";
 import "../assets/css/Header.css";
@@ -42,36 +42,6 @@ function Header() {
   return (
     <>
       <div className="mainheader bg-[#165461]    ">
-        {/* top part-----------start form here------------------ */}
-        {/* <div className="flex justify-around p-6 items-center ">
-        <div className="text-[#F6F9F9] text-[30px] text-center font-semibold w-[100px]">
-          saasta
-        </div>
-        <div className=" items-center justify-center text-white text-[15px] w-full  hidden md:flex">
-          <div className="m-2 text-center cursor-pointer">Home+</div>
-          <div className="m-2 text-center cursor-pointer">Features</div>
-          <div className="m-2 text-center cursor-pointer">Service</div>
-          <div className="m-2 text-center cursor-pointer">Pricing</div>
-          <div className="m-2 text-center cursor-pointer">Contact</div>
-        </div>
-        <div className="min-w-[120px] hidden md:block">
-          <button className="bg-[#337681] p-2 text-[#DCE8E9] text-[14px] text-center font-semibold">
-            Get The App
-          </button>
-        </div>
-        
-        <div className="" onClick={function() {
-            if (document.getElementsByClassName("menubar")[0].style.left == "0px") {
-              document.getElementsByClassName("menubar")[0].style.left = "-100%";
-              document.getElementsByClassName("menubar")[0].style.transition = "0.5s";
-            } else {
-              document.getElementsByClassName("menubar")[0].style.left = "0px";
-              document.getElementsByClassName("menubar")[0].style.transition = "0.5s";
-            }
-          }}>
-          <button className="block md:hidden"><GoThreeBars style={{color:"white"}}/></button>
-        </div>
-      </div> */}
         <nav className="w-full ">
           <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
             <div>
@@ -139,9 +109,20 @@ function Header() {
                       <Link to="/login">Login</Link>
                     </li>
                   ) : (
-                    <li className="text-[white] hover:cursor-pointer hover:font-bold">
-                      <Link to="/profile">Profile</Link>
-                    </li>
+                    <>
+                      <li className="text-[white] hover:cursor-pointer hover:font-bold">
+                        <Link to="/profile">Profile</Link>
+                      </li>
+                    </>
+                  )}
+                  {user.length == 0 ? (
+                     <></>
+                  ) : (
+                    <>
+                      <li className="text-[white] hover:cursor-pointer hover:font-bold">
+                        <Link to="/cart"><FaShoppingCart/></Link>
+                      </li>
+                    </>
                   )}
                 </ul>
               </div>

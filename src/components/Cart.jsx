@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { FaStripeS } from "react-icons/fa";
 import { BsPaypal } from "react-icons/bs";
 import { SiRazorpay } from "react-icons/si";
+
 function Cart() {
   // scroll to top function
   const scrollToTop = () => {
@@ -20,6 +21,9 @@ function Cart() {
   useEffect(() => {
     scrollToTop();
   }, []);
+
+ 
+
   return (
     <div className="">
       <div className="">
@@ -209,14 +213,14 @@ function Cart() {
                             </svg>
                           </label>
                           <label className="relative w-full flex flex-col">
-                          <span className="font-bold mb-3">Expire date</span>
+                            <span className="font-bold mb-3">Expire date</span>
                             <input
                               className="rounded-md peer pl-12 pr-2 py-2 border-2 border-gray-200 placeholder-gray-300"
                               type="text"
                               name="expire_date"
                               placeholder="MM/YY"
                             />
-                              <svg
+                            <svg
                               xmlns="http://www.w3.org/2000/svg"
                               className="absolute bottom-0 left-0 -mb-0.5 transform translate-x-1/2 -translate-y-1/2 text-black peer-placeholder-shown:text-gray-300 h-6 w-6"
                               fill="none"
@@ -232,8 +236,8 @@ function Cart() {
                             </svg>
                           </label>
                           <label className="relative w-full flex flex-col">
-                          <span className="font-bold flex items-center gap-3 mb-3">
-                             CVV
+                            <span className="font-bold flex items-center gap-3 mb-3">
+                              CVV
                               <span className="relative group">
                                 <span className="hidden group-hover:flex justify-center items-center px-2 py-1 text-xs absolute -right-2 transform translate-x-full -translate-y-1/2 w-max top-1/2 bg-black text-white">
                                   Turn your card over and look at the CVV
@@ -275,7 +279,6 @@ function Cart() {
                               />
                             </svg>
                           </label>
-                           
                         </form>
                       </div>
                       <div className="mt-8 text-center">
@@ -288,7 +291,6 @@ function Cart() {
                       </div>
                     </div>
                     {/* ------------- */}
-                     
                   </div>
                 </div>
               </div>
