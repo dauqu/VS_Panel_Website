@@ -115,17 +115,7 @@ function Header() {
                       </li>
                     </>
                   )}
-                  {user.length == 0 ? (
-                    <></>
-                  ) : (
-                    <>
-                      <li className="text-[white] hover:cursor-pointer hover:font-bold">
-                        <Link to="/cart">
-                          <FaShoppingCart />
-                        </Link>
-                      </li>
-                    </>
-                  )}
+                  
                 </ul>
               </div>
             </div>
@@ -143,7 +133,7 @@ function Header() {
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -10, opacity: 0 }}
-          transition={{ duration: 0.5, stiffness: 500 }}
+          transition={{ duration: 0.7, stiffness: 500 }}
           style={{
             width: "100%",
             height: "100%",

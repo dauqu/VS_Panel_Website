@@ -75,14 +75,14 @@ function Profile() {
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -10, opacity: 0 }}
-          transition={{ duration: 0.2, stiffness: 500 }}
+          transition={{ duration: 0.7, stiffness: 500 }}
           style={{
             width: "100%",
             height: "100%",
           }}
         >
           <section className="pt-16 sm:pt-32  ">
-            <div className=" bg-[#fbfbfb] shadow-xl lg:w-[900px] w-full p-4 sm:p-0  m-auto sm:flex   ">
+            <div className=" bg-[#fbfbfb]   lg:w-[900px] w-full p-4 sm:p-0  m-auto sm:flex   ">
               <div className="border sm:w-[200px] ">
                 <div className="p-4  text-left">
                   <div className="w-[150px] m-auto ">
@@ -299,7 +299,7 @@ function Profile() {
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -10, opacity: 0 }}
-          transition={{ duration: 0.2, stiffness: 500 }}
+          transition={{ duration: 0.7, stiffness: 500 }}
           style={{
             width: "100%",
             height: "100%",
@@ -313,7 +313,11 @@ function Profile() {
                     <img src={loginplease} alt="" srcset="" />
                     <div className="pb-4">
                       <h1 className="text-3xl text-[#165461] font-bold text-center">
-                        Please Login First
+                        Please{" "}
+                        <Link to="/login" className="text-[35px] underline">
+                          Login
+                        </Link>{" "}
+                        First
                       </h1>
                     </div>
                   </div>

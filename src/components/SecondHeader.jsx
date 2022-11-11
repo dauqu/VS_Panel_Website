@@ -99,17 +99,7 @@ function SecondHeader() {
                     <Link to="/profile">Profile</Link>
                   </li>
                 )}
-                {user.length == 0 ? (
-                  <></>
-                ) : (
-                  <>
-                    <li className="text-[white] hover:cursor-pointer hover:font-bold">
-                      <Link to="/cart">
-                        <FaShoppingCart />
-                      </Link>
-                    </li>
-                  </>
-                )}
+                
               </ul>
             </div>
           </div>

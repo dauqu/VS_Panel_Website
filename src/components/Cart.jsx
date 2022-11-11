@@ -35,7 +35,7 @@ function Cart() {
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -10, opacity: 0 }}
-          transition={{ duration: 0.2, stiffness: 500 }}
+          transition={{ duration: 0.7, stiffness: 500 }}
           style={{
             width: "100%",
             height: "100%",
