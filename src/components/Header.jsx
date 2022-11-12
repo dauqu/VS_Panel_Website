@@ -47,7 +47,7 @@ function Header() {
             <div>
               <div className="flex items-center justify-between py-3 md:py-5 md:block">
                 <Link to="/">
-                  <h2 className="text-2xl text-[white] font-bold">Saastaa</h2>
+                  <h2 className="text-2xl text-[white] font-bold">Dauqu</h2>
                 </Link>
                 <div className="md:hidden">
                   <button
@@ -89,9 +89,8 @@ function Header() {
             </div>
             <div>
               <div
-                className={`flex-1 justify-self-center pb-3  md:block md:pb-0 md:mt-0 ${
-                  navbar ? "block" : "hidden"
-                }`}
+                className={`flex-1 justify-self-center pb-3  md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
+                  }`}
               >
                 <ul className="items-center justify-center space-y-4 md:flex md:space-x-4 md:space-y-0">
                   <li className="text-[white] hover:cursor-pointer hover:font-bold">
@@ -115,13 +114,13 @@ function Header() {
                       </li>
                     </>
                   )}
-                  
+
                 </ul>
               </div>
             </div>
             <div className="min-w-[120px] hidden md:block">
               <button className="bg-[#337681] p-2 text-[#DCE8E9] text-[14px] text-center font-semibold">
-                Get The App
+                Install Now 
               </button>
             </div>
           </div>
@@ -141,36 +140,18 @@ function Header() {
         >
           <div className="text-center items-center  p-8 mb-[180px]">
             <div className="text-white font-bold text-[40px]  ">
-              Discover With New Dashboard
+              Diploy your app in minutes with Dauqu
             </div>
-            <div className="  text-[#B1CBCF] text-[17px] md:w-1/2 m-auto text-justify">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore,
-              qui delectus ad facilis sunt repudiandae quod quas dolorum
-              accusantium dignissimos id, corrupti possimus impedit consequuntur
-              eveniet sint deleniti! Doloremque, earum.
+            <div className="  text-[#B1CBCF] text-[17px] md:w-1/2 m-auto text-center mt-5">
+              Using Dauqu you can deploy your app in minutes. Dauqu is a cloud based platform that allows you to deploy your app in minutes. Dauqu support all major languages and frameworks. 
             </div>
             <div className="flex mt-8 justify-center">
               <div className="">
-                <button className="bg-[#FFFFFF] p-2 text-[#3E6F7A] font-semibold  ">
+                <button className="bg-[#FFFFFF] p-2 text-[#3E6F7A] font-semibold mt-10">
                   Get Started
                 </button>
               </div>
               <div className="w-[20px]"></div>
-              <div className="flex items-center cursor-pointer  ">
-                <div>
-                  <FaPlayCircle
-                    style={{
-                      color: "white",
-                      fontSize: "38px",
-                      border: "3px solid #71A1A8",
-                      borderRadius: "50%",
-                    }}
-                  />
-                </div>
-                <div className="text-[#D3E2E4] ml-2 text-[18px] ">
-                  Play Demo
-                </div>
-              </div>
             </div>
           </div>
         </motion.div>
