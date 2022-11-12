@@ -138,8 +138,8 @@ function Header() {
             height: "100%",
           }}
         >
-          <div className="text-center items-center  p-8 mb-[180px]">
-            <div className="text-white font-bold text-[40px]  ">
+          <div className="text-center items-center  p-8">
+            <div className="text-white font-bold text-[40px] mt-10">
               Diploy your app in minutes with Dauqu
             </div>
             <div className="  text-[#B1CBCF] text-[17px] md:w-1/2 m-auto text-center mt-5">
@@ -155,26 +155,7 @@ function Header() {
             </div>
           </div>
         </motion.div>
-
-        {/* middle part-----------ends here------------------ */}
       </div>
-      {/* <div className="menubar fixed  left-[-100%] top-[80px] h-[100vh] bg-[white] p-4 z-10 w-full">
-        <div className="cursor-pointer text-[20px] font-semibold mt-4">
-          Home{" "}
-        </div>
-        <div className="cursor-pointer text-[20px] font-semibold mt-4">
-          Feature
-        </div>
-        <div className="cursor-pointer text-[20px] font-semibold mt-4">
-          Service
-        </div>
-        <div className="cursor-pointer text-[20px] font-semibold mt-4">
-          Pricing
-        </div>
-        <div className="cursor-pointer text-[20px] font-semibold mt-4">
-          Contact
-        </div>
-      </div> */}
     </>
   );
 }
